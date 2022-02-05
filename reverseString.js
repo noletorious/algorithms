@@ -21,6 +21,8 @@ function reverseString3(str) {
   return [...str].reverse().join("");
 }
 
+const rsinput = document.getElementById("rsinput");
+rsinput.innerHTML += my_string;
 const rspre = document.getElementById("rspre");
 rspre.innerHTML += reverseString3;
 const rsoutput = document.getElementById("rsoutput");
