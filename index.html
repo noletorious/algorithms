@@ -11,6 +11,9 @@
       font-family: sans-serif;
       margin: 0;
     }
+    .title:hover {
+      cursor: pointer;
+    }
     .algo {
       display: flex;
       flex-direction: column;
@@ -23,6 +26,11 @@
       display: inline-flex;
       flex-direction: column;
       background-color: #f5f5f5;
+    }
+    pre {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
     }
   </style>
   <body>
@@ -53,4 +61,6 @@
   </body>
   <script src="reverseString.js"></script>
   <script src="mergeSorted.js"></script>
+  <script src="addTwoNumbers.js"></script>
+  <script src="titleAccordion.js"></script>
 </html>
