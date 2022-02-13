@@ -9,7 +9,7 @@
   <style>
     .title {
       font-family: sans-serif;
-      margin: 0;
+      margin: 1em 0;
     }
     .title:hover {
       cursor: pointer;
@@ -19,48 +19,100 @@
       flex-direction: column;
       flex: 1 1 auto;
       border: 1px solid #d5d5d5;
-      padding: 2em;
+      padding: 0 1em;
       margin: 5px 0 0 0;
     }
     .output {
       display: inline-flex;
       flex-direction: column;
       background-color: #f5f5f5;
+      padding: 1em;
+      margin-bottom: 1em;
+    }
+    .input {
+      background-color: #f5f5f5;
+      padding: 1em;
+    }
+    .io-label {
+      margin: 0 0 1em 0;
     }
     pre {
+      margin: 0;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.2s ease-out;
     }
   </style>
   <body>
+    <!-- Reverse string -->
     <div class="algo">
       <p class="title">Reverse String</p>
       <pre><div id="rspre"></div></pre>
       <div class="input">
-        <p class="input-label">input</p>
+        <p class="io-label">input</p>
         <div id="rsinput"></div>
       </div>
       <div class="output">
-        <p class="output-label">output</p>
+        <p class="io-label">output</p>
         <div id="rsoutput"></div>
       </div>
     </div>
+    <!-- Merge and sort -->
     <div class="algo">
       <p class="title">Merge and sort</p>
       <pre><div id="mspre"></div></pre>
       <div class="input">
-        <p class="input-label">input</p>
+        <p class="io-label">input</p>
         <div id="msinput"></div>
       </div>
       <div class="output">
-        <p class="output-label">output</p>
+        <p class="io-label">output</p>
         <div id="msoutput"></div>
       </div>
     </div>
+    <!-- Add two numbers -->
+    <div class="algo">
+      <p class="title">Add two number sets</p>
+      <pre><div id="atnpre"></div></pre>
+      <div class="input">
+        <p class="io-label">input</p>
+        <div id="atninput"></div>
+      </div>
+      <div class="output">
+        <p class="io-label">output</p>
+        <div id="atnoutput"></div>
+      </div>
+    </div>
+    <div class="algo">
+      <p class="title">Longest Substring Without Repeating Characters</p>
+      <pre><div id="##pre"></div></pre>
+      <div class="input">
+        <p class="io-label">input</p>
+        <div id="##input"></div>
+      </div>
+      <div class="output">
+        <p class="io-label">output</p>
+        <div id="##output"></div>
+      </div>
+    </div>
+    <!-- Algo -->
+    <!-- <div class="algo">
+      <p class="title">next</p>
+      <pre><div id="##pre"></div></pre>
+      <div class="input">
+        <p class="io-label">input</p>
+        <div id="##input"></div>
+      </div>
+      <div class="output">
+        <p class="io-label">output</p>
+        <div id="##output"></div>
+      </div>
+    </div> -->
   </body>
+  <!-- Algorithms -->
   <script src="reverseString.js"></script>
   <script src="mergeSorted.js"></script>
   <script src="addTwoNumbers.js"></script>
+  <!-- UI -->
   <script src="titleAccordion.js"></script>
 </html>
