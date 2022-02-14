@@ -37,18 +37,62 @@ function ListNode(val, next) {
 // scalable approach: linked list
 // edge case #1: What if l1.length !=== l2.length
 
-const a = new ListNode("hello");
-const l1 = [2, 4, 4];
-//          x
-const l2 = [5, 6, 7];
-//          y
-// carry = 0
+const l1_array = [2, 4, 6];
+//                x
+const l2_array = [5, 6, 7, 9];
+//                y
 
-function addTwoNumbers(l1, l2) {}
+function createLinkedList(list) {
+  let head, newNode;
 
-const atnpre = document.getElementById("atnpre");
-atnpre.innerHTML += addTwoNumbers;
-const atninput = document.getElementById("atninput");
-atninput.innerHTML += "[" + l1 + "], [" + l2 + "]";
-const atnoutput = document.getElementById("atnoutput");
-atnoutput.innerHTML += JSON.stringify(addTwoNumbers(l1, l2));
+  for (let i = list.length - 1; i >= 0; i--) {
+    if (!head) {
+      // first item will be null
+      head = new ListNode(list[i]);
+    } else {
+      newNode = new ListNode(list[i]);
+      newNode.next = head;
+      head = newNode;
+    }
+  }
+  return head;
+}
+
+let l1_nodes = createLinkedList(l1_array);
+let l2_nodes = createLinkedList(l2_array);
+
+function addTwoNumbers(l1, l2) {
+  let head = new ListNode(-1);
+  let result = head;
+  let carry = 0;
+
+  while (l1 || l2) {
+    let l1Val = l1 ? l1.val : 0;
+    let l2Val = l2 ? l2.val : 0;
+    let sum = l1Val + l2Val + carry;
+    carry = 0;
+    let newDigit = sum;
+    if (sum > 9) {
+      newDigit = sum % 10;
+      carry = 1;
+    }
+    result.next = new ListNode(newDigit);
+    result = result.next;
+    //traverse through l1 and l2
+    if (l1) l1 = l1.next;
+    if (l2) l2 = l2.next;
+  }
+  if (carry) {
+    result.next = new ListNode(1);
+  }
+  return head.next;
+}
+
+console.log(addTwoNumbers(l1_nodes, l2_nodes));
+
+// const atnpre = document.getElementById("atnpre");
+// atnpre.innerHTML += addTwoNumbers;
+// const atninput = document.getElementById("atninput");
+// atninput.innerHTML += "[" + l1_array + "], [" + l2_array + "]";
+// const atnoutput = document.getElementById("atnoutput");
+// atnoutput.innerHTML += JSON.stringify(addTwoNumbers(l1_nodes, l2_nodes));
