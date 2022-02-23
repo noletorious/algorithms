@@ -88,11 +88,9 @@ function addTwoNumbers(l1, l2) {
   return head.next;
 }
 
-console.log(addTwoNumbers(l1_nodes, l2_nodes));
-
-// const atnpre = document.getElementById("atnpre");
-// atnpre.innerHTML += addTwoNumbers;
-// const atninput = document.getElementById("atninput");
-// atninput.innerHTML += "[" + l1_array + "], [" + l2_array + "]";
-// const atnoutput = document.getElementById("atnoutput");
-// atnoutput.innerHTML += JSON.stringify(addTwoNumbers(l1_nodes, l2_nodes));
+const atnpre = document.getElementById("atnpre");
+atnpre.innerHTML += addTwoNumbers;
+const atninput = document.getElementById("atninput");
+atninput.innerHTML += "[" + l1_array + "], [" + l2_array + "]";
+const atnoutput = document.getElementById("atnoutput");
+atnoutput.innerHTML += JSON.stringify(addTwoNumbers(l1_nodes, l2_nodes));
