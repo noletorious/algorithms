@@ -1,5 +1,12 @@
+// CONSTRAINTS
+// Will it always be a string?
+// '' -> null
+// [] -> null
+
 const my_string = "Hello, my name is Noel";
 
+// S: O(n)
+// T: O(n)
 function reverseString1(str) {
   // an empty array to hold the newly ordered array
   const reversed = [];
@@ -13,6 +20,8 @@ function reverseString1(str) {
   return output;
 }
 
+// S:O(n)
+// T:O(?)
 function reverseString2(str) {
   return str.split("").reverse().join("");
 }

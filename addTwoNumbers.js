@@ -70,6 +70,7 @@ function addTwoNumbers(l1, l2) {
     let l1Val = l1 ? l1.val : 0;
     let l2Val = l2 ? l2.val : 0;
     let sum = l1Val + l2Val + carry;
+    console.log(sum);
     carry = 0;
     let newDigit = sum;
     if (sum > 9) {

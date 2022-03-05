@@ -4,7 +4,7 @@ let m = 4;
 let n = 4;
 
 // naive approach
-// time: O(n),
+// time: O(n^2),
 // space: O(1n), linear because we and extra array to push into
 
 var nMerge = function (nums1, m, nums2, n) {
