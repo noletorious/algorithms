@@ -54,10 +54,3 @@ var merge = function (nums1, m, nums2, n) {
 
   return nums1;
 };
-
-const mergeSortInput = document.getElementById("msinput");
-mergeSortInput.innerHTML += "[" + nums1 + "], [" + nums2 + "]";
-const mergeSortPre = document.getElementById("mspre");
-mergeSortPre.innerHTML += merge;
-const mergeSortOutput = document.getElementById("msoutput");
-mergeSortOutput.innerHTML += merge(nums1, m, nums2, n);

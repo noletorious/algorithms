@@ -1,12 +1,11 @@
-let sentence = ["h", "e", "y", "  ", "t", "h", "e", "r", "e", "  ", "y", "o", "u"];
 // output -> ["y", "o", "u","  ", "t", "h", "e", "r", "e", "  ","h", "e", "y" ]
 
 /** QUESTIONS AND CONSTRAINTS
- * 
+ *
  *  - [" ", "h", ...], starts with a space? -> trims beginning and end if they are spaces
- *  - Are we returning the original array? 
- *  - [" ", " "], array with just spaces? -> 
- * 
+ *  - Are we returning the original array?
+ *  - [" ", " "], array with just spaces? ->
+ *
  */
 
 /** BRUTE SOLUTION
@@ -47,6 +46,43 @@ let sentence = ["h", "e", "y", "  ", "t", "h", "e", "r", "e", "  ", "y", "o", "u
 
 */
 
-const reverseWords = (array) => {};
+let sentence = ["💋", "💖", " ", "T", "d", " ", "🦖", "🏝"];
+const swapLettersHelper = (arr, start, end) => {
+  let temp = null;
+  while (start < end) {
+    temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+    start++;
+    end--;
+  }
+};
 
-console.log(reverseWords(arr));
+function reverseWordsInArray(array) {
+  swapLettersHelper(array, 0, array.length - 1);
+  let wordStart = null; // we want number or null
+  let atEnd = false;
+  // ["🏝", "🦖"," ", "d", "T"," ","💖", "💋"]
+  //
+  for (let i = 0; i < array.length; i++) {
+    let ch = array[i];
+    if (ch === " ") {
+      if (wordStart !== null) {
+        swapLettersHelper(array, wordStart, i - 1);
+        wordStart = null;
+      }
+    } else if (i === array.length - 1) {
+      if (wordStart !== null) {
+        swapLettersHelper(array, wordStart, i);
+        atEnd = true;
+      }
+    } else {
+      if (wordStart == null) {
+        wordStart = i;
+      }
+    }
+  }
+  return array;
+}
+
+console.info("output: " + reverseWordsInArray(sentence));
