@@ -80,7 +80,6 @@ while loop i < text.len
 const theParenList = "((()))   )))("; //4, the left cluster cancels itself out
 
 function bracketMatch(text) {
-  // your code goes here
   let leftParen = 0;
   let emptyRightParen = 0;
   let p = 0;

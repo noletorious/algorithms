@@ -21,8 +21,8 @@ function createNodeList(arr) {
  * Q: Can the linked list start with zero? It is guaranteed that the list represents a number that does not have leading zeros.
  *
  * C: We're given the our numbers in reverse, so we do the calculation in reverse.
- *
- */
+ 
+*/
 
 /** BRUTE SOLUTION
  *  T:1n + 1n + (n * n) > O(n^2)
@@ -36,7 +36,7 @@ function createNodeList(arr) {
       ...
     - join and return the new array with all the new digits
  *
- */
+*/
 
 /** OPTIMIZED SOLUTION
  * 
@@ -61,8 +61,7 @@ function createNodeList(arr) {
     6. Check if the sum is greater than 9, set carry = 1
     7. Set the head.next to newDigit
   8. if (carry > 0), create a new ListNode(0) and point head.next to it
-
-
+  
  */
 
 l1 = [2, 4, 9];

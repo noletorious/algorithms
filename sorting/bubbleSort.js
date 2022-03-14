@@ -14,7 +14,6 @@ const nums = [4, 3, 2, 1, 9, 8, 7, 6, 5];
 
 const bubbleSort = (numbers) => {
   let arrLen = numbers.length;
-  let loopCount = 0;
   for (let i = 0; i < arrLen; i++) {
     console.log("i: " + i);
     for (let j = 0; j < arrLen; j++) {
