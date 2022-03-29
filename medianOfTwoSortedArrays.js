@@ -43,6 +43,7 @@ var findMedianSortedArrays = function (nums1, nums2) {
     p2++;
   }
 
+  console.log(mergedArray);
   // find the middle
   let mid = Math.floor(mergedArray.length / 2);
 
@@ -59,3 +60,36 @@ var findMedianSortedArrays = function (nums1, nums2) {
 };
 
 console.log(findMedianSortedArrays(nums1, nums2));
+
+const arr1 = [-5, 3, 6, 12, 15];
+let m = arr1.length;
+const arr2 = [-12, -10, -6, -3, 4, 10];
+let n = arr2.length;
+
+/** Median of two sorted arrays v2
+ * 
+ * BRUTE
+ * T: O(?)
+ * S: O(s)
+ * 
+
+ * Edge cases
+ * newArray = [-12, -10, -6, -5, 3, 6,] //even
+ * 	-> median = (-6 + -5)/2 = -5.5 
+ * newArray = [-10, -6, -5, 3, 6,] //odd
+ * 	-> median = -5
+ 
+ * 1. Merge both arrays into ascending order // 
+ * 2. If new array is odd then return the middle index
+ * 3. if new array is even, 
+ ** midLeft = Math.floor((mergedArray.legnth - 1)/2)
+ ** midRight = midLeft + 1
+ ** return median = (newArray[midLeft] + newArray[midRight])/2
+
+ * OPTIMIZED
+ * T: O(?)
+ * S: O(s)
+ * 
+ * 1. If m + n is odd
+
+*/
