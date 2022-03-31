@@ -2,14 +2,15 @@ const str1 = "ak#z#b"; //ab
 const str2 = "ab#b"; //ab
 
 /** Typed Out String
- * 
  *
  * Given two strings, any # is considered a backspace.
  * Q: Does case sensitivity matter? Yes.
  * C: If str1.length !== str2.length, return false.
- * 
- * 
- * Brute, 
+ *
+ */
+
+/** Brute
+ *  
  * T:O(n+m), S: O(n+m)
  * 
   
@@ -19,43 +20,42 @@ const str2 = "ab#b"; //ab
  4. If so, check if str1[i] and str2[i] are the same, if not return false
  5  return true, since tho failures happend
 
-	const createNewString = (string) => {
-	const newString = [];
-	for (let i = string.length - 1; i >= 0; i--) {
-		if (string[i] !== "#") {
-		newString.unshift(string[i]);
-		} else {
-		i--;
-		}
-	}
-	return newString;
-	};
-
-	const backspaceHash = (string1, string2) => {
-	const str1 = createNewString(string1);
-	const str2 = createNewString(string2);
-	if (str1.length !== str2.length) {
-		return false;
-	} else {
-		for (let i = 0; i < str1.length; i++) {
-		if (str1[i] !== str2[i]) {
-			return false;
-		}
-		}
-	}
-	return false;
-	};
-
-	console.log(backspaceHash(str1, str2));
-
-
  * 
  */
+
+const createNewString = (string) => {
+  const newString = [];
+  for (let i = string.length - 1; i >= 0; i--) {
+    if (string[i] !== "#") {
+      newString.unshift(string[i]);
+    } else {
+      i--;
+    }
+  }
+  return newString;
+};
+
+const bruteBackspaceHash = (string1, string2) => {
+  const str1 = createNewString(string1);
+  const str2 = createNewString(string2);
+  if (str1.length !== str2.length) {
+    return false;
+  } else {
+    for (let i = 0; i < str1.length; i++) {
+      if (str1[i] !== str2[i]) {
+        return false;
+      }
+    }
+  }
+  return false;
+};
+
+console.log(bruteBackspaceHash(str1, str2));
 
 /** Typed Out String
  * 
  * Optimized
- * T:O(1) S: O(1)
+ * T:O(n+m) S: O(1)
  * 
 1. Create a hashmap
 1. Loop through string1 and string2 as long as there is a item in either
@@ -73,7 +73,6 @@ const backspaceHash = (string1, string2) => {
   let p2 = string2.length - 1;
 
   while (p1 >= 0 || p2 >= 0) {
-    // p1 = 0, p2 = 0
     // if p1 or p2 is equal to "#"
     if (string1[p1] === "#" || string2[p2] === "#") {
       // if p1 is equal to "#"

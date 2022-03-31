@@ -1,6 +1,4 @@
-// output -> ["y", "o", "u","  ", "t", "h", "e", "r", "e", "  ","h", "e", "y" ]
-
-/** QUESTIONS AND CONSTRAINTS
+/** Reverse Words
  *
  *  - [" ", "h", ...], starts with a space? -> trims beginning and end if they are spaces
  *  - Are we returning the original array?
