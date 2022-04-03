@@ -3,7 +3,7 @@
  * 1. Iteratively
  * 2. Using built-in js methods
  * 3. Using built-in js methods
- * 4. Recursively, T: O(2^n), S:O(n)
+ * 4. Recursively stack, T: O(2^n), S:O(n)
  * 5. Recursively, T: O(2^n), S:O(n)
  *
  */
@@ -53,9 +53,11 @@ function reverseString4(str) {
 
 function reverseString5(str) {
   if (str <= 1) {
+    console.log("end? - " + str);
     return str;
   } else {
-    return reverseString5(str.substr(1)) + str.charAt(0);
+    console.log("within else - " + str);
+    return reverseString5(str.substring(1)) + str.charAt(0);
   }
 }
 
