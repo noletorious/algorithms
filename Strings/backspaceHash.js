@@ -28,9 +28,9 @@ const createNewString = (string) => {
   for (let i = string.length - 1; i >= 0; i--) {
     if (string[i] !== "#") {
       newString.unshift(string[i]);
-    } else {
       i--;
     }
+    i--;
   }
   return newString;
 };
@@ -47,7 +47,7 @@ const bruteBackspaceHash = (string1, string2) => {
       }
     }
   }
-  return false;
+  return true;
 };
 
 console.log(bruteBackspaceHash(str1, str2));
@@ -111,4 +111,4 @@ const backspaceHash = (string1, string2) => {
   return true;
 };
 
-console.log(backspaceHash(str1, str2));
+// console.log(backspaceHash(str1, str2));
