@@ -21,6 +21,8 @@ const str = "The quick brown fox jumps over the lazy dog.";
 // str.indexOf("dog") ->  returns the index of the first occurrence of the specified substring
 // output: 40
 
+//
+
 /** OBJECTS */
 
 // MAP -> Like an object and an array had a baby
