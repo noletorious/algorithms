@@ -1,6 +1,6 @@
 class LinkedList {
   constructor() {
-    this.head = {};
+    this.head = null;
     this.tail = this.head;
     this.length = 0;
   }
@@ -15,21 +15,27 @@ class LinkedList {
   // prepend
   prepend(value) {
     let newNode = new Node(value);
-    newNode.next = this.head;
-    this.head = newNode;
+    // if length is 0 make head the new node
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      //update the current head with the new node
+      newNode.next = this.head;
+      this.head = newNode;
+    }
     this.length++;
   }
 
   // insert(value, index)
+  insert(value, index) {}
   // remove(value, index)
   printList() {
-    let count = 0;
     let output = "";
     let current = this.head;
-    while (this.length >= count) {
+    while (current !== null) {
       output = `${output}${current.value} => `;
       current = current.next;
-      count++;
     }
     console.log(`${output}null`);
   }
@@ -44,25 +50,10 @@ class Node {
 
 const list = new LinkedList();
 list.prepend(-6);
-// list.append(5);
-// list.append(9);
-// list.append(52);
+list.append(52);
 list.append(65);
 list.append("a");
+list.prepend("h");
 list.printList();
 
-console.log(JSON.stringify(list, 0, 1));
-
-/** BFS, level by level
- *
- * Pros: Shortest path, closer nodes
- * Cons: More memory
- *
- */
-
-/** DFS, down to the bottom then back up
- *
- * Pros: Less Memory, does the path exist?
- * Cons: Can be slow time wise.
- *
- */
+// console.log(JSON.stringify(list, 0, 1));
