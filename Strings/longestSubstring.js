@@ -31,28 +31,16 @@ const longestSubstringBrute = (str) => {
   return longest;
 };
 
-console.log("Brute force: " + longestSubstringBrute(str1));
+// console.log("Brute force: " + longestSubstringBrute(str1));
 
-/** Pointer method
+/** Pointer method #1 Currently incorrect
  *
  * T: O(n)
  * S: O(n)
  *
  */
 
-/** Variables
-
- longest = 
- p1 = 
- p2 = 
- innerLongest = 
- chars = {
-
- }
-
- */
-
-const str2 = "abcbaac";
+const str2 = "abcbaachijklmnophhhhhachijklmnopyzx";
 // p1          |
 // p2          |
 
@@ -63,7 +51,7 @@ const longestSubstringShifters = (str) => {
   let chars = {};
   let innerLongest = 0;
 
-  while (p1 < str.length) {
+  while (str[p2]) {
     if (!chars[str[p2]]) {
       chars[str[p2]] = p2;
       p2++;
@@ -71,12 +59,59 @@ const longestSubstringShifters = (str) => {
     } else {
       p1 = p2;
       chars = {};
+      innerLongest = 0;
     }
     longest = Math.max(innerLongest, longest);
   }
 
-  console.log(chars);
   return longest;
 };
 
-console.log("Shifter force: " + longestSubstringShifters(str2));
+// console.log("Shifter force: " + longestSubstringShifters(str2));
+
+/**  Pointer method #2
+ *
+ *  T: O(n)
+ *  S: O(n)
+ *
+ */
+
+/**
+ *
+ *  longest = 0
+ *  innerLongest = 0
+ *  chars  {
+ *  a:0,
+ *  d:1,
+ *  b:4,
+ *  c:3,
+ *  b:X
+ *
+ *  }
+ *
+ */
+
+//            01234567
+const str3 = "adbcbaac";
+//            i
+//             p
+const longestSubstringShifters2 = (str) => {
+  if (str === "") return 0;
+
+  let longest = 0;
+  let chars = {};
+  let pointer = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    const currentChar = str[i];
+    const seenCharIndex = chars[currentChar];
+    if (seenCharIndex >= left) {
+      pointer = seenCharIndex + 1;
+    }
+    chars[str[i]] = i;
+    longest = Math.max(longest, pointer - i + 1);
+  }
+  return longest;
+};
+
+console.log("Shifter force2: " + longestSubstringShifters(str2));
