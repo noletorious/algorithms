@@ -1,30 +1,42 @@
-const array = [94, 2, 44, 24, 9, 1, -1];
-
 /** ARRAYS (and strings) */
 
+const array = [94, 2, 44, 24, 9, 1, -1];
+
 // Shift -> removes first element, returns that element
-const shift = array.shift();
+const shifted = array.shift();
+shifted;
 
 // Unshift -> adds one or more elements to beginning of array, returns new array legnth
-const unshift = array.unshift(shift);
+const unshifted = array.unshift(shifted);
+unshifted;
 
 // Slice -> returns a shallow copy of an array, with start and end parameters. Start is inclusive, end is exclusive.
+const sliced = array.slice(1, 4);
+sliced;
+
 // Splice ->  changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+array.splice(5, 1, "a");
+array;
 
 // Push -> adds one or more elements to end of array, returns new length of array.
-//Pop -> removes that last element of an array, returns that element
+let pushed = array.push(["p", "u", "s", "h"]);
+pushed;
 
-const str = "The quick brown fox jumps over the lazy dog.";
+//Pop -> removes that last element of an array, returns that element
+let popped = array.pop();
+popped;
 
 /** STRINGS */
 
-// str.chartAt(4) -> returns the character at the index
-// output: q
+const str = "The quick brown fox jumps over the lazy dog.";
 
-// str.indexOf("dog") ->  returns the index of the first occurrence of the specified substring
-// output: 40
+// returns the character at the index of 4
+let charAt = str.charAt(4);
+charAt;
 
-//
+// first he first match in a string
+let indexOf = str.indexOf("e");
+indexOf;
 
 /** JS OBJECTS  */
 
