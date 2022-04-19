@@ -1,10 +1,41 @@
 const binaryMatrix = [
   [0, 1, 0, 1, 0],
-  [0, 0, 1, 1, 1],
+  [0, 1, 1, 1, 1],
   [1, 0, 0, 1, 0],
   [0, 1, 1, 0, 0],
   [1, 0, 1, 0, 1],
 ];
+
+function getNeighbors(matrix, i, j) {
+  let stack = [[i, j]];
+
+  while (stack.length > 0) {
+    let current = stack.pop();
+    console.log;
+    matrix[current] = -1;
+    console.log(current);
+    stack.push("x");
+  }
+}
+
+function countIslands(matrix) {
+  let islands = 0;
+  let cols = matrix[0].length;
+  let rows = matrix.length;
+
+  for (let i = 1; i < rows - 1; i++) {
+    for (let j = 1; j < cols - 1; j++) {
+      if (matrix[i][j] === 1) {
+        getNeighbors(matrix, i, j);
+        islands++;
+      }
+    }
+  }
+
+  return islands;
+}
+
+console.log(countIslands(binaryMatrix));
 
 /**
  * 
@@ -20,6 +51,8 @@ const binaryMatrix = [
 Depth first search, because we are diving into child per node
 
 */
+
+/** 
 
 function getNeighbors(matrix, rowLen, colLen, i, j) {
   let neighbors = [];
@@ -74,3 +107,5 @@ function countIslands(binaryMatrix) {
 }
 
 console.log(countIslands(binaryMatrix));
+
+*/
